@@ -13,8 +13,6 @@ Gem::Specification.new do |spec|
   spec.license       = 'MIT'
   spec.required_ruby_version = Gem::Requirement.new('>= 2.3.0')
 
-  spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com'"
-
   spec.metadata['homepage_uri'] = spec.homepage
   spec.metadata['source_code_uri'] = 'https://github.com/vkalach/moysklad_integration'
   spec.metadata['changelog_uri'] = 'https://github.com/vkalach/moysklad_integration/blob/master/CHANGELOG.md'
@@ -30,5 +28,6 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'activesupport', '~> 6.0', '>= 6.0.3.1'
   spec.add_dependency 'faraday', '~> 1.0', '>= 1.0.1'
-  spec.add_development_dependency 'dotenv', '~> 2.7', '>= 2.7.5'
+  spec.add_dependency 'addressable', '~> 2.7'
+  spec.add_dependency 'log4r', '~> 1.1', '>= 1.1.10'
 end
