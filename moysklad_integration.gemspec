@@ -30,5 +30,6 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'activesupport', '~> 6.0', '>= 6.0.3.1'
   spec.add_dependency 'faraday', '~> 1.0', '>= 1.0.1'
-  spec.add_development_dependency 'dotenv', '~> 2.7', '>= 2.7.5'
+  spec.add_dependency 'addressable', '~> 2.7'
+  spec.add_dependency 'log4r', '~> 1.1', '>= 1.1.10'
 end
