@@ -57,12 +57,6 @@ moysklad_service.get(:entity_name)
 moysklad_service.filter(:entity_name, { search_params: like_hash })
 ```
 
-#### Find all entities of a certain type with specific fields / Найти все сущности (объекты) определенного типа с определенными полями
-
-```ruby
-moysklad_service.filter(:entity_name, { search_params: like_hash })
-```
-
 #### Update an entity / Обновить сущность (объект)
 
 ```ruby

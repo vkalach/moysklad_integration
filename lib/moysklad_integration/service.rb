@@ -31,12 +31,16 @@ module MoyskladIntegration
       end
     end
 
-    def get(object_name, _id = nil)
-      @entity_path = "entity/#{object_name.downcase}"
+    def get(object_name, id = nil)
+      @entity_path = id ? "entity/#{object_name.downcase}/#{id}" : "entity/#{object_name.downcase}"
       response = connection.get(entity_path)
       if response.status == 200
-        JSON.parse(response.body)['rows'].each_with_object([]) do |entity_params, arr|
-          arr << Entity.new(entity_params)
+        if id
+          Entity.new(JSON.parse(response.body))
+        else
+          JSON.parse(response.body)['rows'].each_with_object([]) do |entity_params, arr|
+            arr << Entity.new(entity_params)
+          end
         end
       end
     end

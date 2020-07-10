@@ -13,6 +13,13 @@ module MoyskladIntegration
     end
 
     def update(params)
+      params.each do |key, val|
+        next if val.blank? || instance_variables.include?(:"@#{key}")
+
+        self.class.__send__(:define_method, key, -> { instance_variable_get("@#{key}") })
+        self.class.__send__(:define_method, "#{key}=", ->(val) { instance_variable_set("@#{key}", val) })
+      end
+
       service.update(self, params)
     end
 
