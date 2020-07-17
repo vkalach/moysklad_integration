@@ -41,7 +41,7 @@ module MoyskladIntegration
           next if keys_to_compare.present? && !keys_to_compare&.include?(key)
 
           hash[key] = current_position.instance_variable_get(var)
-        end
+        end.merge!(id: current_position.id)
       end
 
       new_positions = (positions_params - current_positions)
